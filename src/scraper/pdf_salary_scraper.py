@@ -4,7 +4,7 @@ import re
 import pandas as pd
 from PyPDF2 import PdfReader
 
-from . import provinces, regions
+from .. import provinces, regions
 
 
 def extract_salary_data(pdf_path="data/2023 Salary Guide _PDF.pdf"):

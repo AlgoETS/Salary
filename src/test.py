@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 import unittest
+from pathlib import Path
 
-import fitz
+from bs4 import BeautifulSoup
 
 from pdf import font_tags, fonts, headers_para
+from src.scraper.pdf_salary_scraper import extract_salary_data
+from src.scraper.stackoverflow_scraper import (
+    extract_salary_data as extract_salary_data_stackoverflow,
+)
 
 
 def test_headers_para():
@@ -51,12 +56,6 @@ def test_font_tags():
     assert font_tags(font_counts, styles) == expected_result
 
 
-import unittest
-from pathlib import Path
-
-from my_module import process_pdf
-
-
 class TestProcessPDF(unittest.TestCase):
     def setUp(self):
         self.pdf_file = Path("data/2023 Salary Guide _PDF.pdf")
@@ -64,14 +63,14 @@ class TestProcessPDF(unittest.TestCase):
 
     def test_process_pdf_output_columns(self):
         # Call the function to process the PDF
-        data = process_pdf(self.pdf_file)
+        data = extract_salary_data(self.pdf_file)
 
         # Check that the data has the expected columns
         self.assertEqual(list(data.columns), self.expected_columns)
 
     def test_process_pdf_output_data(self):
         # Call the function to process the PDF
-        data = process_pdf(self.pdf_file)
+        data = extract_salary_data(self.pdf_file)
 
         # Check that the data has some expected values
         expected_values = {
@@ -84,6 +83,54 @@ class TestProcessPDF(unittest.TestCase):
             self.assertListEqual(
                 list(data[column].head(2)), expected_values.get(column, [])
             )
+
+
+class TestScrapeSalaryData(unittest.TestCase):
+    def test_scrape_salary_data(self):
+        # create a sample HTML table to test with
+        html = """
+            <table>
+                <tr>
+                    <th>Developer Type</th>
+                    <th>Median Salary</th>
+                    <th>Bottom Quartile Salary</th>
+                    <th>Top Quartile Salary</th>
+                </tr>
+                <tr>
+                    <td>Web Developer</td>
+                    <td>$75,000</td>
+                    <td>$60,000</td>
+                    <td>$95,000</td>
+                </tr>
+                <tr>
+                    <td>Data Scientist</td>
+                    <td>$110,000</td>
+                    <td>$85,000</td>
+                    <td>$140,000</td>
+                </tr>
+            </table>
+        """
+
+        # parse the HTML and extract the salary data
+        soup = BeautifulSoup(html, "html.parser")
+        salary_data = extract_salary_data_stackoverflow(soup)
+
+        # define the expected output
+        expected_output = {
+            "Web Developer": {
+                "median_salary": "$75,000",
+                "bottom_quartile_salary": "$60,000",
+                "top_quartile_salary": "$95,000",
+            },
+            "Data Scientist": {
+                "median_salary": "$110,000",
+                "bottom_quartile_salary": "$85,000",
+                "top_quartile_salary": "$140,000",
+            },
+        }
+
+        # assert that the output matches the expected output
+        self.assertEqual(salary_data, expected_output)
 
 
 if __name__ == "__main__":
