@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-from dotenv import load_dotenv
 
 FMP_API_KEY = os.getenv("FMP_API_KEY")
 BINANCE_API_KEY = os.getenv("BINANCE_API_KEY")

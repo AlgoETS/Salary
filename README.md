@@ -1,67 +1,66 @@
-# Template Stratégie
+# Salary in Canada
+
+2023
+
+En utilisant les donnée venant de 2023 Salary Guide _PDF.pdf, nous allons créer un modèle de prédiction de salaire pour les différents métiers en fonction de la région, de l'expérience et du niveau d'étude. Les résultats seront affichés dans un tableau et un graphique.
+
+
+
+## Objectif
 
 > **Pour utiliser ce projet il faut avoir terminé le tutoriel**
 
 [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.so/Wiki-strat-gie-a97dbdf253304bbc83aab440ee57708d)
 
-
 [
-    ![Open in Remote - Containers](
-        https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode
-    )
-](
-    https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template
-)
+    ![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)
+](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)
+
+
+[![GitHub](https://img.shields.io/github/license/godatadriven/python-devcontainer-template?style=for-the-badge)](LICENSE.md)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/godatadriven/python-devcontainer-template/CI?style=for-the-badge)]()
+[![GitHub issues](https://img.shields.io/github/issues/godatadriven/python-devcontainer-template?style=for-the-badge)]()
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 
-
-
-
 ## Installation
 
 1. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-    1.1 Use the package manager [conda](https://docs.conda.io/en/latest/) to install the requirements.
+   1.1 Use the package manager [conda](https://docs.conda.io/en/latest/) to install the requirements.
 
-        ```bash
-        conda install --file requirements.txt
-        ```
+   ```bash
+   conda install --file requirements.txt
+   ```
 
-        Please Use **Anaconda** or **Miniconda**
+   1.2 Use poetry to install the requirements. Poetry is a dependency manager for Python that allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Poerty Shell will create a virtual environment for you.
 
-    1.2 Use poetry to install the requirements. Poetry is a dependency manager for Python that allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Poerty Shell will create a virtual environment for you.
-
-        pip install poetry
-        poetry shell
-        poetry install
-
+   pip install poetry
+   poetry shell
+   poetry install
 2. Créer un fichier `.env` file à la racine du projet pour y mettre la clé secrète
 
-    ```bash
-    FMP_API_KEY= <Insert your FMP API KEY >
-    BINANCE_API_KEY= <Insert your BINANCE API KEY >
-    ```
-
+   ```bash
+   FMP_API_KEY= <Insert your FMP API KEY >
+   BINANCE_API_KEY= <Insert your BINANCE API KEY >
+   ```
 3. Installer le pre-commit hook
 
-    ```bash
-    pre-commit install
-    ```
-
+   ```bash
+   pre-commit install
+   ```
 4. Lancer le notebook
 
-    ```bash
-    jupyter notebook
-    ```
-
+   ```bash
+   jupyter notebook
+   ```
 
 # Pourquoi utiliser cette structure de projet ?
 
@@ -88,12 +87,12 @@ Cela étant dit, il est donc préférable de commencer avec une structure propre
 │
 ├── src              <- Source code for use in this project.
 │   ├── __init__.py    <- Makes src a Python module and les fonctions sont accessibles depuis n'importe quel fichier
-│   ├── config.py      <- Fichier contenant les fonctions liées à la configuration
-│   ├── data.py        <- Fichier contenant les fonctions liées à la récupération des données
-│   ├── indicators.py  <- Fichier contenant les fonctions liées aux indicateurs
-│   ├── process.py     <- Fichier contenant les fonctions liées au traitement des données
-│   ├── strategy.py    <- Fichier contenant les fonctions liées à la stratégie
-│   ├── test.py        <- Fichier contenant les fonctions liées aux tests
+│   ├── config.py                   <- Fichier contenant les fonctions liées à la configuration
+│   ├── data.py                     <- Fichier contenant les fonctions liées à la récupération des données
+│   ├── indicators.py               <- Fichier contenant les fonctions liées aux indicateurs
+│   ├── pdf.py                      <- Fichier contenant les fonctions liées à la collecte des données pour le pdf
+│   ├── pdf_salary_scraper.py       <- Fichier contenant les fonctions liées à la collecte des données pour le pdf
+│   ├── test.py                     <- Fichier contenant les fonctions liées aux tests
 ├── web                <- Github Page (https://algoets.github.io/template-strategie/web/index.html)
 ├── wiki               <- Wiki du projet
 │
@@ -104,10 +103,10 @@ Cela étant dit, il est donc préférable de commencer avec une structure propre
 
 
 ```
+
 ## Contribution
 
 Un pre-commit configuration a été configuré pour vérifier automatiquement chaque validation et supprime les données de sortie du bloc-notes Jupyter.
-
 
 [Tâches](wiki/issues.md)
 
