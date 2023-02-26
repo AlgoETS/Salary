@@ -2,7 +2,7 @@
 
 2023
 
-En utilisant les donnée venant de 2023 Salary Guide _PDF.pdf, nous allons créer un modèle de prédiction de salaire pour les différents métiers en fonction de la région, de l'expérience et du niveau d'étude. Les résultats seront affichés dans un tableau et un graphique.
+En utilisant les donnée venant de 2023 Salary Guide _PDF.pdf, nous allons créer un modèle de prédiction de salaire pour les différents métiers en fonction de la région, de l'expérience et du niveau d'étude.
 
 
 

@@ -38,7 +38,6 @@ polars = "^0.13.3"
 numpy = "^1.24.2"
 matplotlib = "^3.5.1"
 seaborn = "^0.11.2"
-3.0.1 = "^3.0.1"
 
 
 [tool.poetry.group.dev]
