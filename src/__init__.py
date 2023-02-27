@@ -1,19 +1,72 @@
 # -*- coding: utf-8 -*-
-import httpx
-
-
-async def make_api_request(api_endpoint, params):
-    async with httpx.AsyncClient() as client:
-        # Make the GET request to the API
-        response = await client.get(api_endpoint, params=params)
-
-        # Check the status code of the response
-        if response.status_code != 200:
-            print("Error: Failed to retrieve data from API")
-            return None
-        else:
-            # Retrieve the data in JSON format
-            data = response.json()
-            print(data)
-
-            return data
+provinces = [
+    "ontario",
+    "québec",
+    "british columbia",
+    "alberta",
+    "manitoba",
+    "saskatchewan",
+    "nova scotia",
+    "new brunswick",
+    "newfoundland & labrador",
+    "prince edward island",
+]
+regions = [
+    "calgary metropolitan region",
+    "edmonton metropolitan region",
+    "northern alberta",
+    "red deer",
+    "fort st. john",
+    "fraser valley",
+    "greater vancouver",
+    "greater victoria",
+    "kelowna",
+    "prince george",
+    "surrey/delta",
+    "winnipeg metropolitan region",
+    "greater moncton",
+    "saint john",
+    "york region",
+    "conception bay - st. john’s",
+    "greater halifax",
+    "brant county",
+    "cambridge",
+    "durham region",
+    "frontenac county",
+    "greater hamilton area",
+    "greater sudbury area",
+    "greater toronto area",
+    "halton region",
+    "hastings county",
+    "london area",
+    "niagara region",
+    "ottawa metropolitan region",
+    "oxford county",
+    "peel region",
+    "peterborough county",
+    "simcoe county",
+    "waterloo region",
+    "wellington county",
+    "windsor-essex county",
+    "york region",
+    "queens - charlottetown",
+    "centre-du-québec",
+    "chaudière-appalaches",
+    "estrie",
+    "lanaudière",
+    "laurentides",
+    "laval",
+    "mauricie",
+    "montérégie - agglomeration ",
+    "montérégie - brome-missisquoi",
+    "montérégie - la haute-yamaska",
+    "montérégie - les maskoutains",
+    "montérégie - vaudreuil-soulanges",
+    "montréal",
+    "national capital",
+    "outaouais",
+    "saguenay-lac-saint-jean",
+    "moose jaw",
+    "regina metropolitan area",
+    "saskatoon metropolitan area",
+]
