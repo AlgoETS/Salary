@@ -8,6 +8,14 @@ ARG USERNAME=vscode
 RUN groupadd --gid 1000 $USERNAME && \
     useradd --uid 1000 --gid 1000 -m $USERNAME
 
+# add sudo
+RUN apt-get update -q && apt-get install -y sudo
+# add sudo privileges to user
+RUN echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+RUN echo "#!/bin/bash\n\$@" > /usr/bin/sudo
+RUN chmod +x /usr/bin/sudo
+
 # Make sure to reflect new user in PATH
 ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 
@@ -40,17 +48,13 @@ RUN cd /tmp && pip install --user -r requirements-dev.txt
 FROM base AS jupyter
 # Install jupyter
 RUN pip install --user jupyter jupyterlab jupyterlab-requirements
-# Install jupyterlab extensions
-# RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
-#     jupyter labextension install @oriolmirosa/jupyterlab_materialdarker && \
-#     jupyter labextension install @mflevine/jupyterlab_html
 # Put jupyterlab in .bashrc
 RUN echo 'alias jupyterlab="jupyter-lab --no-browser --ip=127.0.0.0 --port=8888"' >> ~/.bashrc
 
 # Third stage: install zsh and oh-my-zsh
 FROM jupyter AS zsh
-USER root
 # Install zsh
+USER root
 RUN apt-get update -q && apt-get install -y zsh
 USER $USERNAME
 # Install oh-my-zsh
