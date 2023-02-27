@@ -4,6 +4,7 @@ https://www.jobbank.gc.ca/home
 https://www.jobbank.gc.ca/trend-analysis/search-wages
 
 https://open.canada.ca/data/en/dataset/adad580f-76b0-4502-bd05-20c125de9116
+https://www150.statcan.gc.ca/n1/daily-quotidien/220831/mc-a001-fra.htm
 
 
 This dataset can be used for analyzing salary trends and patterns across different regions and industries in Canada, and to explore relationships between variables such as occupation, region, and wages. It can also be used to generate customized reports and visualizations for the purpose of decision-making and policy-making related to salaries and employment in Canada.
