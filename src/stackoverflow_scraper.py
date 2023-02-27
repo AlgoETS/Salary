@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import httpx
 from bs4 import BeautifulSoup
-from utils import save_pickle, load_dataframe
+
+from utils import load_dataframe, save_pickle
 
 # make the request to the webpage
 url = "https://survey.stackoverflow.co/2022/#salary-comp-total"

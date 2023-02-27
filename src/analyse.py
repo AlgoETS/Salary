@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import pandas as pd
 
 
 def highest_paying_job(df):

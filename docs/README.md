@@ -1,9 +1,217 @@
-# Salaire
-
-lien vers Notion
+# Salaire (Exploration de données)
 
 ## Description
 
-Description du projet
+Ce notebook a pour but d'explorer les données de salaire en 2023 au canada.
+On veut aussi visualiser les données pour mieux comprendre les données.
+
+### Resultat
+
+<div id="maxSalary">
+    The job that can has the max salary is:
+      <span id="max">
+        receptionist (bilingual) ontario simcoe county $ 713 000
+      </span>
+    <div>
+      In the second place is: chief financial officer ontario greater toronto
+      area $ 594 100
+    </div>
+    <div>The engineering jobs two most paid are:
+      <ul>
+        <li>engineering manager</li>
+        <li>project engineer</li>
+      </ul>
+    </div>
+    <div id="leastpayedregion">
+      Get the engineers jobs that pay the least are in the following region:
+      <ul>
+        <li>windsor-essex county</li>
+        <li>greater sudbury area</li>
+        <li>brant county</li>
+        <li>greater hamilton area</li>
+      </ul>
+    </div>
+    <div id="minSalary">
+      get the engineers jobs that pay the least
+      <span id="min">
+        structural engineering technologist ontario windsor-essex county $ 55
+        000
+      </span>
+      In the second place is: chief financial officer ontario greater toronto
+      area $ 594 100
+    </div>
+    <div id="quebecmostpayed">
+      <table>
+        <tr>
+          <th>Province</th>
+          <th>City</th>
+          <th>Job Title</th>
+          <th>Salary Range</th>
+        </tr>
+        <tr>
+          <td>Quebec</td>
+          <td>Montreal</td>
+          <td>Chief Financial Officer</td>
+          <td>$330,500 - $576,400+</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      Quebec salary for cloud architect
+      <table border="1" class="dataframe">
+        <thead>
+          <tr style="text-align: right">
+            <th>job</th>
+            <th>region</th>
+            <th>mid_mean</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>cloud architect</td>
+            <td>montréal</td>
+            <td>127.65</td>
+          </tr>
+          <tr>
+            <td>cloud architect</td>
+            <td>laval</td>
+            <td>125.80</td>
+          </tr>
+          <tr>
+            <td>cloud architect</td>
+            <td>saguenay-lac-saint-jean</td>
+            <td>108.70</td>
+          </tr>
+          <tr>
+            <td>cloud architect</td>
+            <td>laurentides</td>
+            <td>108.25</td>
+          </tr>
+          <tr>
+            <td>cloud architect</td>
+            <td>national capital</td>
+            <td>108.25</td>
+          </tr>
+          <tr>
+            <td>cloud architect</td>
+            <td>estrie</td>
+            <td>105.20</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="salary">
+      <table>
+        <tr>
+          <th>job</th>
+        </tr>
+        <tr>
+          <td>head of workshop and assembly</td>
+          <td>206.50</td>
+        </tr>
+        <tr>
+          <td>chief financial officer</td>
+          <td>146.15</td>
+        </tr>
+        <tr>
+          <td>controller</td>
+          <td>97.00</td>
+        </tr>
+        <tr>
+          <td>project coordinator</td>
+          <td>90.90</td>
+        </tr>
+        <tr>
+          <td>general manager</td>
+          <td>85.35</td>
+        </tr>
+        <tr>
+          <td>contracts administrator</td>
+          <td>84.00</td>
+        </tr>
+        <tr>
+          <td>vice president finance</td>
+          <td>79.95</td>
+        </tr>
+        <tr>
+          <td>data entry clerk</td>
+          <td>74.00</td>
+        </tr>
+        <tr>
+          <td>manufacturing director</td>
+          <td>73.65</td>
+        </tr>
+        <tr>
+          <td>inventory control manager</td>
+          <td>70.65</td>
+        </tr>
+        <tr>
+          <td>parts manager</td>
+          <td>68.95</td>
+        </tr>
+        <tr>
+          <td>program manager</td>
+          <td>62.55</td>
+        </tr>
+        <tr>
+          <td>director of operations</td>
+          <td>59.60</td>
+        </tr>
+        <tr>
+          <td>site supervisor</td>
+          <td>58.60</td>
+        </tr>
+        <tr>
+          <td>property manager</td>
+          <td>52.55</td>
+        </tr>
+        <tr>
+          <td>transportation manager</td>
+          <td>51.80</td>
+        </tr>
+        <tr>
+          <td>materials manager</td>
+          <td>51.10</td>
+        </tr>
+        <tr>
+          <td>director - financial planning &amp; analysis</td>
+          <td>50.15</td>
+        </tr>
+        <tr>
+          <td>finance director</td>
+          <td>49.45</td>
+        </tr>
+        <tr>
+          <td>qa/qc inspector</td>
+          <td>48.95</td>
+        </tr>
+        <tr>
+          <td>claims supervisor</td>
+          <td>48.20</td>
+        </tr>
+        <tr>
+          <td>office/operations manager</td>
+          <td>47.55</td>
+        </tr>
+        <tr>
+          <td>executive assistant</td>
+          <td>45.95</td>
+        </tr>
+        <tr>
+          <td>administrative manager</td>
+          <td>44.20</td>
+        </tr>
+        <tr>
+          <td>vice-president internal audit</td>
+          <td>43.25</td>
+        </tr>
+        <tr>
+          <td>health and safety manager</td>
+          <td>42.55</td>
+        </tr>
+        <tr>
+          <td>vice president human resources / chro</td>
+          <td>
+    </div>
 
 

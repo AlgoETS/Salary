@@ -2,7 +2,6 @@
 
 En utilisant les donnée venant de 2023 Salary Guide_PDF.pdf de randstak, nous allons créer un modèle de prédiction de salaire pour les différents métiers en fonction de la région, de l'expérience et du niveau d'étude.
 
-
 ## Objectif
 
 > **Pour utiliser ce projet il faut avoir terminé le tutoriel**
@@ -15,7 +14,6 @@ En utilisant les donnée venant de 2023 Salary Guide_PDF.pdf de randstak, nous a
 
 
 [![GitHub](https://img.shields.io/github/license/godatadriven/python-devcontainer-template?style=for-the-badge)](LICENSE.md)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/godatadriven/python-devcontainer-template/CI?style=for-the-badge)]()
 [![GitHub issues](https://img.shields.io/github/issues/godatadriven/python-devcontainer-template?style=for-the-badge)]()
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
@@ -45,19 +43,19 @@ En utilisant les donnée venant de 2023 Salary Guide_PDF.pdf de randstak, nous a
    jupyter notebook
    ```
 
-# Pourquoi utiliser cette structure de projet ?
+# Structure de projet ?
 
 Cette structure s’inspire de Cookie Cutter Data Science
 
 La qualité du code de science des données est une question d'exactitude et de reproductibilité.
 
-Cela étant dit, il est donc préférable de commencer avec une structure propre et logique et de s'y tenir tout au long. Pour la maintenabilité, une configuration assez standardisée comme celle-ci.
-
 ```
 ├── .devcontainer      <- Fichiers de configuration pour VSCode
 ├── .github            <- Fichiers de configuration pour Github
 ├── README.md          <- The top-level README for developers using this project.
-├── data               <- Data from third party sources.
+├── data               <- Données utilisées pour le projet
+│   ├── pdf            <- Données venant du pdf
+│   ├── pickle         <- Données venant du pdf transformées en pickle
 |
 ├── docs               <- Documentation du projet et de la stratégie
 │   ├── notebooks      <- Jupyter notebooks
@@ -66,25 +64,24 @@ Cela étant dit, il est donc préférable de commencer avec une structure propre
 ├── sandbox
 │   ├── __init__.py    <- Makes src a Python module
 │   ├── output         <- Output pdf de ta stratégie
-│   ├── votreStrategie.ipynb        <- Jupyter de ta stratégie
+│   ├── salary_exploration.ipynb        <- Jupyter de ta stratégie
 │
 ├── src              <- Source code for use in this project.
 │   ├── __init__.py    <- Makes src a Python module and les fonctions sont accessibles depuis n'importe quel fichier
+│   ├── analyse.py                  <- Fichier contenant les fonctions liées à l'analyse
 │   ├── config.py                   <- Fichier contenant les fonctions liées à la configuration
-│   ├── data.py                     <- Fichier contenant les fonctions liées à la récupération des données
-│   ├── indicators.py               <- Fichier contenant les fonctions liées aux indicateurs
-│   ├── pdf.py                      <- Fichier contenant les fonctions liées à la collecte des données pour le pdf
 │   ├── pdf_salary_scraper.py       <- Fichier contenant les fonctions liées à la collecte des données pour le pdf
+│   ├── pdf.py                      <- Fichier contenant les fonctions liées à la collecte des données pour le pdf
+│   ├── stackoverflow_scraper.py    <- Fichier contenant les fonctions liées à la collecte des données pour stackoverflow
 │   ├── test.py                     <- Fichier contenant les fonctions liées aux tests
-├── web                <- Github Page (https://algoets.github.io/template-strategie/web/index.html)
+│   ├── utils.py                    <- Fichier contenant les fonctions liées aux utils
+├── web                <- Web du projet
 ├── wiki               <- Wiki du projet
 │
 ├── .pre-commit-config.yaml <- Configuration de pre-commit
 ├── pyproject.toml          <- Configuration de poetry
 ├── requirements.txt        <- The requirements file for reproducing the analysis environment, e.g. generated with `pip freeze > requirements.txt`
 ├── sample.env              <- Fichier d'exemple pour le fichier .env
-
-
 ```
 
 ## Contribution
