@@ -1,4 +1,4 @@
-# Nom de la Strategie
+# Salaire
 
 lien vers Notion
 

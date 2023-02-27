@@ -1,9 +1,6 @@
 # Salary in Canada
 
-2023
-
-En utilisant les donnée venant de 2023 Salary Guide _PDF.pdf, nous allons créer un modèle de prédiction de salaire pour les différents métiers en fonction de la région, de l'expérience et du niveau d'étude.
-
+En utilisant les donnée venant de 2023 Salary Guide_PDF.pdf de randstak, nous allons créer un modèle de prédiction de salaire pour les différents métiers en fonction de la région, de l'expérience et du niveau d'étude.
 
 
 ## Objectif
@@ -34,29 +31,15 @@ En utilisant les donnée venant de 2023 Salary Guide _PDF.pdf, nous allons crée
    pip install -r requirements.txt
    ```
 
-   1.1 Use the package manager [conda](https://docs.conda.io/en/latest/) to install the requirements.
+2. run pdf salary scraper
 
    ```bash
-   conda install --file requirements.txt
+   python src/pdf.py
+   python src/pdf_salary_scraper.py
+   python stackoverflow_scraper.py
    ```
 
-   1.2 Use poetry to install the requirements. Poetry is a dependency manager for Python that allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Poerty Shell will create a virtual environment for you.
-
-   pip install poetry
-   poetry shell
-   poetry install
-2. Créer un fichier `.env` file à la racine du projet pour y mettre la clé secrète
-
-   ```bash
-   FMP_API_KEY= <Insert your FMP API KEY >
-   BINANCE_API_KEY= <Insert your BINANCE API KEY >
-   ```
-3. Installer le pre-commit hook
-
-   ```bash
-   pre-commit install
-   ```
-4. Lancer le notebook
+3. run jupyter notebook
 
    ```bash
    jupyter notebook

@@ -1,30 +1,6 @@
 # -*- coding: utf-8 -*-
-import pickle
 
 import pandas as pd
-
-
-def read_pickle(path):
-    with open(path, "rb") as f:
-        data = pickle.load(f)
-    return data
-
-
-def save_pickle(data, path):
-    with open(path, "wb") as f:
-        pickle.dump(data, f)
-
-
-def load_data(path):
-    data = read_pickle(path)
-
-
-def load_dataframe(data):
-    df = pd.DataFrame(data)
-
-
-def save_dataframe(df, path):
-    df.to_pickle(path)
 
 
 def highest_paying_job(df):
@@ -87,22 +63,19 @@ def compare_job_province(df, job, province):
 def compare_job(df, job):
     df_filtered = df[df["job"] == job]
     df_grouped = df_filtered.groupby(["job", "region"])["mid_mean"].mean().reset_index()
-    df_sorted = df_grouped.sort_values("mid_mean", ascending=False)
-    return df_sorted
+    return df_grouped.sort_values("mid_mean", ascending=False)
 
 
 def compare_province(df, province):
     df_filtered = df[df["province"] == province]
     df_grouped = df_filtered.groupby(["job", "region"])["mid_mean"].mean().reset_index()
-    df_sorted = df_grouped.sort_values("mid_mean", ascending=False)
-    return df_sorted
+    return df_grouped.sort_values("mid_mean", ascending=False)
 
 
 def compare_job_region(df, job, region):
     df_filtered = df[(df["region"] == region) & (df["job"] == job)]
     df_grouped = df_filtered.groupby(["job", "region"])["mid_mean"].mean().reset_index()
-    df_sorted = df_grouped.sort_values("mid_mean", ascending=False)
-    return df_sorted
+    return df_grouped.sort_values("mid_mean", ascending=False)
 
 
 # function to compare a specific job in a all provinces
@@ -111,8 +84,7 @@ def compare_job_all_provinces(df, job):
     df_grouped = (
         df_filtered.groupby(["job", "province"])["mid_mean"].mean().reset_index()
     )
-    df_sorted = df_grouped.sort_values("mid_mean", ascending=False)
-    return df_sorted
+    return df_grouped.sort_values("mid_mean", ascending=False)
 
 
 # function to find the job with the largest difference, the user can choose between entry, mid or senior

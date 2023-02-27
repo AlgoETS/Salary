@@ -5,8 +5,8 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from pdf import font_tags, fonts, headers_para
-from src.scraper.pdf_salary_scraper import extract_salary_data
-from src.scraper.stackoverflow_scraper import (
+from src.pdf_salary_scraper import extract_salary_data
+from src.stackoverflow_scraper import (
     extract_salary_data as extract_salary_data_stackoverflow,
 )
 

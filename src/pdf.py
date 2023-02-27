@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 from operator import itemgetter
+import fitz
 
 
 def fonts(doc, granularity=False):
@@ -139,7 +140,7 @@ def headers_para(doc, size_tag):
 
 if __name__ == "__main__":
     # Open the PDF file
-    doc = fitz.open("./data/2023 Salary Guide _PDF.pdf")
+    doc = fitz.open("./data/2023_salary_guide.pdf")
     print(doc)
     font_counts, styles = fonts(doc, granularity=False)
     size_tag = font_tags(font_counts, styles)
@@ -160,4 +161,4 @@ if __name__ == "__main__":
     # save the output to a text file
     with open("output.txt", "w") as f:
         for item in header_para:
-            f.write("%s " % item)
+            f.write(f"{item} ")
