@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
-
 def highest_paying_job(df):
     # Split the salary ranges into minimum and maximum salaries
     df[["entry_min", "entry_max"]] = (
