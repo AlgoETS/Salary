@@ -43,9 +43,9 @@ def extract_salary_data(pdf_path="data/pdf/2024_salary_guide.pdf"):
                         print(f"Captured data: {job_title}, {junior_range}, {interm_range}, {senior_range}")  # Debugging line
 
                         data["job"].append(job_title.strip())
-                        data["junior"].append(junior_range)
-                        data["interm."].append(interm_range)
-                        data["sénior"].append(senior_range)
+                        data["entry"].append(junior_range)
+                        data["mid"].append(interm_range)
+                        data["senior"].append(senior_range)
                         data["province"].append(current_province)
                         data["region"].append(current_region)
 
@@ -55,7 +55,7 @@ def extract_salary_data(pdf_path="data/pdf/2024_salary_guide.pdf"):
 if __name__ == "__main__":
     data = extract_salary_data(pdf_path="data/pdf/2024_salary_guide.pdf")
     print(data)
-    output_file = "data/pickle/salary_guide_2024.pkl"
+    output_file = "data/pickle/salary_guide_2024_2.pkl"
     pd.to_pickle(data, output_file)
     df = pd.DataFrame(data)
     print(df.head())

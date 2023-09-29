@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 # creating a pdf reader object
-reader = PdfReader("data/2024 Salary Guide _PDF.pdf")
+reader = PdfReader("data/pdf/2024_salary_guide.pdf")
 provinces = [
     "ontario",
     "québec",
@@ -161,7 +161,7 @@ for page in reader.pages:
     page_number += 1
 
 # save data to pickle file
-output_file = "data/salary_guide.pkl"
+output_file = "data/pickle/salary_guide_2024_1.pkl"
 pd.to_pickle(data, output_file)
 df = pd.DataFrame(data)
 print(df.head())
