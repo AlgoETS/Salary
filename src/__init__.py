@@ -69,4 +69,6 @@ regions = [
     "moose jaw",
     "regina metropolitan area",
     "saskatoon metropolitan area",
+    "montérégie - la haute-yamaska",
+    "saguenay-lac-saint-jean"
 ]
