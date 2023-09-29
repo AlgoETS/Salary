@@ -19,7 +19,12 @@
 ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 
 
-
+## PDF SALARY SCRAPER
+1. 
+    ```bash
+    python src/pdf_salary_scraper_2024.py
+    ```
+2. executer le notebook dans Salary_2023/sandbox/salary_exploration.ipynb
 
 ## Installation
 
