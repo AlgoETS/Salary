@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 # creating a pdf reader object
-reader = PdfReader("data/2024 Salary Guide _PDF.pdf")
+reader = PdfReader("data/Splitted_EN_2024 Salary Guide _PDF.pdf")
 provinces = ["ontario", "québec", "british columbia", "alberta", "manitoba", "saskatchewan", "nova scotia", "new brunswick", "newfoundland & labrador", "prince edward island"]
 regions=['calgary metropolitan region', 'edmonton metropolitan region', 'northern alberta', 'red deer', 'fort st. john', 'fraser valley', 'greater vancouver', 'greater victoria', 'kelowna', 'prince george', 'surrey/delta', 'winnipeg metropolitan region', 'greater moncton', 'saint john', 'york region', 'conception bay - st. john’s', 'greater halifax', 'brant county', 'cambridge', 'durham region', 'frontenac county', 'greater hamilton area', 'greater sudbury area', 'greater toronto area', 'halton region', 'hastings county', 'london area', 'niagara region', 'ottawa metropolitan region', 'oxford county', 'peel region', 'peterborough county', 'simcoe county', 'waterloo region', 'wellington county', 'windsor-essex county', 'york region', 'queens - charlottetown', 'centre-du-québec', 'chaudière-appalaches', 'estrie', 'lanaudière', 'laurentides', 'laval', 'mauricie', 'montérégie - agglomeration ', 'montérégie - brome-missisquoi', 'montérégie - la haute-yamaska', 'montérégie - les maskoutains', 'montérégie - vaudreuil-soulanges', 
 'montréal',
@@ -34,6 +34,7 @@ for page in reader.pages:
     text = page.extract_text().lower()
 
     for line in text.splitlines():
+
         #find the province
         for province in provinces:
             if province in text.lower():
@@ -44,9 +45,9 @@ for page in reader.pages:
                 current_region = region
                 break
         #2023 salary guide  |61director of operations 110.0 -140.0 186.0 -190.0 210.0 -230.0
-        if "guide salarial 2024" in line.lower():
+        if "2024 salary guide" in line.lower():
             #remove 2024 salary guide  |XX from the line to keep only the job title and salary range
-            pattern = r"\d{4}\s\S+\s\S+\s+\|\d+"
+            pattern = r"\d{4}\s\S+\s\S+\s*\d*"
             line = re.sub(pattern, "", line)
             
             
@@ -70,8 +71,8 @@ for page in reader.pages:
                     # Split remaining numbers
                     numbers = match.group(2)
 
-                    #47,7-60,4 53,5 -68,2 59,7 -75,7'
-                    pattern = r'(\d+,\d+)\s*-\s*(\d+,\d+)'
+                    
+                    pattern = r'(\d+\.\d+)\s*-\s*(\d+\.\d+)'
 
                     # Find all matches of the pattern in the line
                     numbers = re.findall(pattern, numbers)
