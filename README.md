@@ -1,21 +1,8 @@
 # Salary in Canada
 
-En utilisant les donnée venant de 2023 Salary Guide_PDF.pdf de randstak, nous allons créer un modèle de prédiction de salaire pour les différents métiers en fonction de la région, de l'expérience et du niveau d'étude.
+En utilisant les donnée venant de 2023 2024 Salary Guide_PDF.pdf de randstak, nous allons créer un modèle de prédiction de salaire pour les différents métiers en fonction de la région, de l'expérience et du niveau d'étude.
 
 ## Objectif
-
-> **Pour utiliser ce projet il faut avoir terminé le tutoriel**
-
-[![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.so/Wiki-strat-gie-a97dbdf253304bbc83aab440ee57708d)
-
-[
-    ![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)
-](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/godatadriven/python-devcontainer-template)
-
-
-[![GitHub](https://img.shields.io/github/license/godatadriven/python-devcontainer-template?style=for-the-badge)](LICENSE.md)
-[![GitHub issues](https://img.shields.io/github/issues/godatadriven/python-devcontainer-template?style=for-the-badge)]()
-
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
@@ -84,10 +71,3 @@ La qualité du code de science des données est une question d'exactitude et de 
 ├── sample.env              <- Fichier d'exemple pour le fichier .env
 ```
 
-## Contribution
-
-Un pre-commit configuration a été configuré pour vérifier automatiquement chaque validation et supprime les données de sortie du bloc-notes Jupyter.
-
-[Tâches](wiki/issues.md)
-
-[Flux de travail](wiki/workflow.md)
