@@ -11,9 +11,9 @@ def extract_salary_data(pdf_path="data/pdf/2024_salary_guide.pdf"):
         "province": [],
         "region": [],
         "job": [],
-        "junior": [],
-        "interm.": [],
-        "sénior": [],
+        "entry": [],
+        "mid": [],
+        "senior": [],
     }
 
     for page in reader.pages:
@@ -30,9 +30,12 @@ def extract_salary_data(pdf_path="data/pdf/2024_salary_guide.pdf"):
                 # print(re.match(regex, line))  # Debugging line
                 if match := re.match(regex, line):
                     job_title, numbers = match.groups()
-                    pattern = r"(\d+\.\d+)\s*-\s*(\d+\.\d+)"
+                    # print(f"Debug: job_title = {job_title}")  # Debugging line
+                    # print(f"Debug: numbers = {numbers}")  # Debugging line
+                    pattern = r"(\d+,\d+)\s*-\s*(\d+,\d+)"
                     number_ranges = re.findall(pattern, numbers)
-                    print(number_ranges)  # Debugging line
+                    # print(f"Debug: numbers = {numbers}")  # Debugging line
+                    # print(f"Debug: number_ranges = {number_ranges}")  # Debugging line
 
                     if len(number_ranges) == 3:
                         junior_range, interm_range, senior_range = [f"{start}-{end}" for start, end in number_ranges]
