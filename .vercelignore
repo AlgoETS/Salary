@@ -1,0 +1,14 @@
+# .vercelignore
+**/*.md
+sandbox/
+docs/
+,github/
+src/
+web/
+.gitignore
+.pre-commit-config.yaml
+LICENSE
+README.md
+requirements-dev.txt
+requirements.txt
+setup.py
