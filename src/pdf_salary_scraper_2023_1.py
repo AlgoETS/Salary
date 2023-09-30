@@ -4,6 +4,8 @@ import re
 from pathlib import Path
 import pandas as pd
 
+from __init__ import provinces, regions
+
 # creating a pdf reader object
 reader = PdfReader("data/pdf/2023_salary_guide.pdf")
 provinces = ["ontario", "québec", "british columbia", "alberta", "manitoba", "saskatchewan",
