@@ -40,8 +40,8 @@ async def salary_2023():
 
 @app.get("/salary/2024")
 async def salary_2024():
-    # Path to the pickle file
-    ickle_path = os.path.join("..", "data", "pickle", "salary_guide_2024_1.pkl")
+    # Corrected the typo here
+    pickle_path = os.path.join("..", "data", "pickle", "salary_guide_2024_1.pkl")
     
     try:
         # Load the pickle file into a pandas DataFrame
